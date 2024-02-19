@@ -1,5 +1,7 @@
 #include "Level.h"
 #include "Player.h"
+#include "Cursor.h"
+
 
 Level::Level(sf::RenderWindow* hwnd, Input* in)
 {
@@ -39,7 +41,17 @@ Level::Level(sf::RenderWindow* hwnd, Input* in)
 		Enemy2.setWindow(window);
 		
 
-		
+		cursorTex.loadFromFile("gfx/icon.png");
+		mousePointer.setTexture(&cursorTex);
+		mousePointer.setSize(sf::Vector2f(50, 50));
+		mousePointer.setInput(input);
+		window->setMouseCursorVisible(false);
+
+		BackgroundTex.loadFromFile("gfx/Level1_1.png");
+		bg.setTexture(&BackgroundTex);
+		bg.setSize(sf::Vector2f(11038, 675));
+		bg.setInput(input);
+		bg.setWindow(window);
 
 }
 
@@ -60,10 +72,13 @@ void Level::handleInput(float dt)
 	}
 	PlayerSprite.handleInput(dt);
 
-
+	window->getDefaultView();
+	bg.handleInput(dt);
 
 
 }
+
+
 
 // Update game objects
 void Level::update(float dt)
@@ -71,17 +86,21 @@ void Level::update(float dt)
 	Enemy1.update(dt, move);
 	Enemy2.update(dt,  move1);
 
+	mousePointer.update(dt);
+
+	
 }
 
 // Render level
 void Level::render()
 {
 	beginDraw();
-
+	window->draw(bg);
 	window->draw(testSprite);
 	window->draw(PlayerSprite);
 	window->draw(Enemy1);
 	window->draw(Enemy2);
+	window->draw(mousePointer);
 
 	endDraw();
 }

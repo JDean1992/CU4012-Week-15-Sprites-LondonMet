@@ -1,5 +1,4 @@
-﻿  Enemy.cpp
-  Level.cpp
-  Main.cpp
-  Generating Code...
-  CU4012-SFML.vcxproj -> C:\Users\jod0601\Documents\GitHub\CU4012-Week-15-Sprites-LondonMet\x64\Debug\CU4012-SFML.exe
+﻿  Background.cpp
+C:\Users\JOD0601\Documents\GitHub\CU4012-Week-15-Sprites-LondonMet\CU4012-SFML\Background.cpp(16,21): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\JOD0601\Documents\GitHub\CU4012-Week-15-Sprites-LondonMet\CU4012-SFML\Background.cpp(21,19): warning C4305: 'argument': truncation from 'double' to 'float'
+  CU4012-SFML.vcxproj -> C:\Users\JOD0601\Documents\GitHub\CU4012-Week-15-Sprites-LondonMet\x64\Debug\CU4012-SFML.exe
